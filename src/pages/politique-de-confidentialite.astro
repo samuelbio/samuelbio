@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="Politique de confidentialité | Samuel Bio"
+  description="Politique de confidentialité du site Samuel Bio, développeur Angular freelance senior."
+  canonical="https://www.samuelbio.fr/politique-de-confidentialite"
+  robots="noindex, nofollow"
+>
+  <Header currentPage="other" />
+  <main id="contenu" tabindex="-1">
+    <div class="container prose">
+      <h1>Politique de confidentialité</h1>
+      <p>Dernière mise à jour : novembre 2026.</p>
+      <h2>Responsable du traitement</h2>
+      <p>Samuel Bio, joignable à <a href="mailto:biosamuel7@gmail.com">biosamuel7@gmail.com</a>.</p>
+      <h2>En résumé</h2>
+      <ul>
+        <li>Ce site ne dépose aucun cookie et n'utilise aucun traceur publicitaire.</li>
+        <li>Aucun formulaire : aucune donnée n'est collectée directement par ce site.</li>
+        <li>La mesure d'audience est anonyme et ne nécessite pas votre consentement.</li>
+      </ul>
+      <h2>Mesure d'audience</h2>
+      <p>Le site utilise Plausible Analytics, un outil de mesure d'audience sans cookie, hébergé dans l'Union européenne. Il collecte des statistiques agrégées : pages vues, site d'origine, pays, type d'appareil, et les clics sur le bouton de prise de rendez-vous. L'adresse IP n'est pas conservée et aucun identifiant persistant n'est déposé sur votre appareil. Ces données ne permettent pas de vous identifier.</p>
+      <p>Base légale : intérêt légitime (améliorer le site). Conformément aux recommandations de la CNIL, ce type de mesure d'audience exemptée ne nécessite pas de bandeau de consentement.</p>
+      <h2>Prise de rendez-vous</h2>
+      <p>Le bouton « Réserver un échange de 20 min » vous redirige vers un service tiers de prise de rendez-vous. Les informations que vous y saisissez (nom, email, message) sont traitées par ce service selon sa propre politique de confidentialité, puis utilisées par Samuel Bio uniquement pour organiser l'échange et y donner suite.</p>
+      <h2>Email</h2>
+      <p>Si vous écrivez à biosamuel7@gmail.com, votre message est conservé le temps nécessaire au traitement de votre demande et à la relation professionnelle qui peut en découler, puis supprimé.</p>
+      <h2>Hébergement</h2>
+      <p>L'hébergeur du site peut enregistrer des journaux techniques (adresse IP, date, page demandée) à des fins de sécurité. Voir les <a href="/mentions-legales">mentions légales</a>.</p>
+      <h2>Vos droits</h2>
+      <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition et de limitation sur vos données. Pour l'exercer : <a href="mailto:biosamuel7@gmail.com">biosamuel7@gmail.com</a>. Vous pouvez aussi adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

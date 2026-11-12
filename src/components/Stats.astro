@@ -1,0 +1,73 @@
+---
+const stats = [
+  {
+    value: '8+',
+    label: "ans d'expérience Angular",
+  },
+  {
+    value: 'Expert',
+    label: 'Angular certifié (Level 3)',
+  },
+  {
+    value: '2 Mds',
+    label: 'de transactions/an sur une plateforme fintech',
+  },
+  {
+    value: 'EDF, GRDF, V1, RCA',
+    label: 'Clients de confiance',
+    small: true,
+  },
+];
+---
+
+<section class="stats section-alt" aria-label="Chiffres clés">
+  <div class="container">
+    <ul class="stats-grid">
+      {stats.map((stat) => (
+        <li class="stat-item">
+          <span class:list={['stat-value', { 'stat-value--small': stat.small }]}>{stat.value}</span>
+          <span class="stat-label">{stat.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .stats {
+    padding-block: 3rem;
+  }
+
+  .stats-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1.1;
+  }
+
+  .stat-value--small {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.4;
+  }
+</style>

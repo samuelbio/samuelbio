@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout
+  title="Mentions légales | Samuel Bio"
+  description="Mentions légales du site Samuel Bio, développeur Angular freelance senior."
+  canonical="https://www.samuelbio.fr/mentions-legales"
+  robots="noindex, nofollow"
+>
+  <Header currentPage="other" />
+  <main id="contenu" tabindex="-1">
+    <div class="container prose">
+      <h1>Mentions légales</h1>
+      <p>Conformément à l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN).</p>
+      <h2>Éditeur du site</h2>
+      <ul>
+        <li>Nom : Samuel Bio</li>
+        <li>Statut : à compléter</li>
+        <li>SIRET : à compléter</li>
+        <li>Adresse : à compléter</li>
+        <li>Email : <a href="mailto:biosamuel7@gmail.com">biosamuel7@gmail.com</a></li>
+        <li>Directeur de la publication : Samuel Bio</li>
+      </ul>
+      <h2>Hébergeur</h2>
+      <ul>
+        <li>Cloudflare, Inc.</li>
+        <li>101 Townsend St, San Francisco, CA 94107, États-Unis</li>
+        <li>Site : <a href="https://www.cloudflare.com" rel="noopener">www.cloudflare.com</a></li>
+      </ul>
+      <h2>Propriété intellectuelle</h2>
+      <p>Les textes, visuels et le code de ce site sont la propriété de Samuel Bio, sauf mention contraire. Toute reproduction sans autorisation écrite est interdite. Les noms de clients cités (EDF, GRDF, V1, RCA) appartiennent à leurs propriétaires respectifs et sont mentionnés à titre de référence professionnelle.</p>
+      <p>Polices : Bricolage Grotesque, Inter et JetBrains Mono, sous licence SIL Open Font License 1.1.</p>
+      <h2>Données personnelles</h2>
+      <p>Voir la <a href="/politique-de-confidentialite">politique de confidentialité</a>.</p>
+      <h2>Contact</h2>
+      <p>Pour toute question : <a href="mailto:biosamuel7@gmail.com">biosamuel7@gmail.com</a>.</p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

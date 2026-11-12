@@ -1,0 +1,119 @@
+---
+const services = [
+  {
+    number: '01',
+    title: 'Lancer un projet Angular sur des fondations solides',
+    description:
+      'Mise en place de l\'architecture, des conventions et des outils dès le départ pour éviter la dette technique.',
+    tags: ['Architecture Nx', 'Conventions', 'DDD', 'Clean Architecture'],
+  },
+  {
+    number: '02',
+    title: 'Reprendre ou moderniser une application existante',
+    description:
+      'Diagnostic, plan d\'amélioration par étapes et migration sans interruption de service.',
+    tags: ['Migration de version', 'Standalone', 'Signals', 'RxJS'],
+  },
+  {
+    number: '03',
+    title: 'Réduire les régressions et sécuriser les mises en production',
+    description:
+      'Mise en place de tests automatisés et d\'une chaîne CI/CD fiable pour livrer en confiance.',
+    tags: ['Tests', 'CI/CD', 'TDD', 'Qualité'],
+  },
+  {
+    number: '04',
+    title: 'Faire monter une équipe en compétences',
+    description:
+      'Accompagnement des développeurs pour qu\'ils gagnent en autonomie et en rigueur.',
+    tags: ['Mentorat', 'Revues de code', 'Lead Tech', 'Documentation'],
+  },
+];
+---
+
+<section class="services section" id="expertise" aria-labelledby="services-heading">
+  <div class="container">
+    <h2 id="services-heading" class="section-title">Ce que je fais pour vous</h2>
+    <p class="section-subtitle">Quatre axes d'intervention adaptés à votre contexte Angular.</p>
+    <ul class="services-grid">
+      {services.map((service) => (
+        <li class="service-card">
+          <span class="service-number" aria-hidden="true">{service.number}</span>
+          <h3 class="service-title">{service.title}</h3>
+          <p class="service-desc">{service.description}</p>
+          <ul class="service-tags" aria-label="Technologies et méthodes">
+            {service.tags.map((tag) => (
+              <li class="tag">{tag}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .services-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .service-number {
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.35;
+  }
+
+  .service-desc {
+    font-size: 0.925rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin-top: 0.25rem;
+  }
+
+  .tag {
+    background-color: rgba(45, 108, 223, 0.08);
+    color: var(--color-accent);
+    border: 1px solid rgba(45, 108, 223, 0.15);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+</style>

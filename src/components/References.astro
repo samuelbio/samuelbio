@@ -1,0 +1,141 @@
+---
+const references = [
+  {
+    client: 'EDF',
+    sector: 'Énergie',
+    project: 'Projet Vision 2035',
+    description:
+      'Architecture DDD en monorepo Nx pour une application stratégique à l\'horizon 2035.',
+    tags: ['DDD', 'Nx', 'Monorepo', 'Angular'],
+  },
+  {
+    client: 'GRDF',
+    sector: 'Énergie',
+    project: 'Programme OMEGA',
+    description:
+      'Migration de modules critiques du système d\'information gérant environ 11 millions de compteurs.',
+    tags: ['Migration', 'Angular', 'Modules critiques', '11 M compteurs'],
+  },
+  {
+    client: 'V1',
+    sector: 'Fintech',
+    project: 'Plateforme de paiement',
+    description:
+      'Développement et architecture front-end sur une plateforme traitant 2 milliards de transactions par an.',
+    tags: ['Fintech', '2 Mds transactions/an', 'Angular', 'Performance'],
+  },
+  {
+    client: 'RCA',
+    sector: 'Expertise comptable',
+    project: 'Application métier',
+    description:
+      'Développement et architecture front-end Angular pour une application d\'expertise comptable.',
+    tags: ['Angular', 'Architecture', 'Expertise comptable'],
+  },
+];
+---
+
+<section class="references section" id="references" aria-labelledby="references-heading">
+  <div class="container">
+    <h2 id="references-heading" class="section-title">Références</h2>
+    <p class="section-subtitle" id="secteurs">
+      Des projets Angular dans des secteurs exigeants.
+    </p>
+    <ul class="references-grid">
+      {references.map((ref) => (
+        <li class="reference-card">
+          <div class="reference-header">
+            <div>
+              <span class="reference-client">{ref.client}</span>
+              <span class="reference-sector">{ref.sector}</span>
+            </div>
+          </div>
+          <p class="reference-project">{ref.project}</p>
+          <p class="reference-desc">{ref.description}</p>
+          <ul class="reference-tags" aria-label="Technologies et contexte">
+            {ref.tags.map((tag) => (
+              <li class="tag">{tag}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .references-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .reference-card {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: box-shadow 0.2s;
+  }
+
+  .reference-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .reference-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .reference-client {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .reference-sector {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    font-weight: 500;
+    margin-top: 0.1rem;
+  }
+
+  .reference-project {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .reference-desc {
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .reference-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+  }
+
+  .tag {
+    background-color: #f4efe6;
+    color: #4a4a4a;
+    border: 1px solid var(--color-border);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+</style>

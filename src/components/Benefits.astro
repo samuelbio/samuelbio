@@ -1,0 +1,115 @@
+---
+const benefits = [
+  {
+    icon: '🏗️',
+    title: 'Une architecture claire et modulaire',
+    description:
+      'Des conventions partagées, une organisation du code cohérente et une modularité qui facilite la maintenance sur le long terme.',
+    tags: ['Clean Architecture', 'DDD', 'Architecture hexagonale', 'Nx'],
+  },
+  {
+    icon: '🛡️',
+    title: 'Moins de bugs grâce aux tests automatisés',
+    description:
+      'Une couverture de tests adaptée à votre contexte pour détecter les régressions avant qu\'elles n\'atteignent la production.',
+    tags: ['TDD', 'Vitest', 'Jest', 'Playwright', 'Cypress'],
+  },
+  {
+    icon: '🚀',
+    title: 'Une équipe autonome',
+    description:
+      'Des développeurs qui comprennent les décisions d\'architecture et peuvent faire évoluer le projet sans vous.',
+    tags: ['Documentation', 'Design System', 'Revues de code', 'Mentorat'],
+  },
+];
+---
+
+<section class="benefits section section-alt" aria-labelledby="benefits-heading">
+  <div class="container">
+    <h2 id="benefits-heading" class="section-title">Ce que vous obtenez</h2>
+    <p class="section-subtitle">Des résultats concrets, pas des concepts abstraits.</p>
+    <ul class="benefits-grid">
+      {benefits.map((benefit) => (
+        <li class="benefit-card">
+          <span class="benefit-icon" aria-hidden="true">{benefit.icon}</span>
+          <div class="benefit-body">
+            <h3 class="benefit-title">{benefit.title}</h3>
+            <p class="benefit-desc">{benefit.description}</p>
+            <ul class="benefit-tags" aria-label="Technologies et méthodes">
+              {benefit.tags.map((tag) => (
+                <li class="tag">{tag}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .benefits-grid {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .benefit-card {
+    display: flex;
+    gap: 1.25rem;
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    align-items: flex-start;
+  }
+
+  .benefit-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 0.1rem;
+  }
+
+  .benefit-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .benefit-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .benefit-desc {
+    font-size: 0.925rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+  }
+
+  .benefit-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+  }
+
+  .tag {
+    background-color: rgba(45, 108, 223, 0.08);
+    color: var(--color-accent);
+    border: 1px solid rgba(45, 108, 223, 0.15);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 500px) {
+    .benefit-card {
+      flex-direction: column;
+    }
+  }
+</style>

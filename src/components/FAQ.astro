@@ -1,0 +1,134 @@
+---
+const faqs = [
+  {
+    question: 'Êtes-vous disponible en remote ?',
+    answer:
+      'Oui. Je travaille en remote partout en France. Je peux aussi venir sur site à Nantes, à Paris et aux alentours.',
+  },
+  {
+    question: 'Intervenez-vous sur une application Angular existante ?',
+    answer:
+      'Oui. Je commence par comprendre le code, l\'équipe et les contraintes. Ensuite, je propose un plan d\'amélioration par étapes, plutôt qu\'une réécriture complète.',
+  },
+  {
+    question: 'Faites-vous des audits ou migrations de version ?',
+    answer:
+      'Oui. L\'audit dresse un état des lieux : architecture, dette technique, tests, performance. Il se termine par une liste d\'actions priorisées. La migration Angular se fait version par version.',
+  },
+  {
+    question: 'Quelle est la durée minimale d\'une mission ?',
+    answer:
+      'Cela dépend du besoin. Un audit est une mission courte. Un rôle de Lead Tech s\'inscrit plutôt sur plusieurs mois.',
+  },
+  {
+    question: 'Pouvez-vous encadrer une équipe ?',
+    answer:
+      'Oui. En tant que Lead Tech front-end, j\'accompagne les développeurs : revues de code, conventions, documentation et mentorat.',
+  },
+  {
+    question: 'Comment se passe le premier échange ?',
+    answer:
+      '20 minutes en visio, sans engagement. Vous présentez votre contexte et votre besoin. Je pose des questions et je vous dis franchement si je peux vous aider.',
+  },
+];
+---
+
+<section class="faq section" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <h2 id="faq-heading" class="section-title">Questions fréquentes</h2>
+    <p class="section-subtitle">Tout ce qu'il faut savoir avant de me contacter.</p>
+    <dl class="faq-list">
+      {faqs.map((item) => (
+        <div class="faq-item">
+          <details class="faq-details">
+            <summary class="faq-question">
+              <dt>{item.question}</dt>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <dd class="faq-answer">
+              <p>{item.answer}</p>
+            </dd>
+          </details>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 760px;
+  }
+
+  .faq-item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-card);
+    overflow: hidden;
+  }
+
+  .faq-details {
+    width: 100%;
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    font-size: 0.975rem;
+    color: var(--color-text);
+    user-select: none;
+    transition: background-color 0.15s;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question dt {
+    flex: 1;
+  }
+
+  .faq-question:hover {
+    background-color: rgba(45, 108, 223, 0.04);
+    color: var(--color-accent);
+  }
+
+  .faq-icon {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--color-accent);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    line-height: 1;
+  }
+
+  .faq-details[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-details[open] .faq-question {
+    color: var(--color-accent);
+    background-color: rgba(45, 108, 223, 0.04);
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .faq-answer p {
+    font-size: 0.925rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    padding-top: 1rem;
+  }
+</style>

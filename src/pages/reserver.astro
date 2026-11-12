@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const target = 'https://calendar.app.google/xJj7bte6fhgnTmTFA';
+---
+<BaseLayout
+  title="Réserver un échange de 20 min | Samuel Bio, Angular"
+  description="Prenez rendez-vous avec Samuel Bio, développeur Angular freelance certifié Expert Angular. 20 min en visio, sans engagement."
+  canonical="https://www.samuelbio.fr/reserver"
+  robots="noindex, follow"
+  ogImage="https://www.samuelbio.fr/og/rdv.jpg"
+  ogImageAlt="Un besoin Angular ? Parlons-en. Réservez un échange de 20 minutes en visio avec Samuel Bio."
+>
+  <script is:inline define:vars={{ target }}>window.location.replace(target);</script>
+  <main><p>Redirection vers la prise de rendez-vous… <a href={target}>Cliquez ici si rien ne se passe</a>.</p></main>
+</BaseLayout>

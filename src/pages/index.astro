@@ -1,0 +1,495 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const starPath = "M16 1.5c.9 7.6 6.9 13.6 14.5 14.5-7.6.9-13.6 6.9-14.5 14.5C15.1 22.9 9.1 16.9 1.5 16 9.1 15.1 15.1 9.1 16 1.5Z";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Samuel Bio",
+    "jobTitle": "Développeur Angular freelance senior et Lead Tech Front-end",
+    "url": "https://www.samuelbio.fr",
+    "email": "mailto:biosamuel7@gmail.com",
+    "sameAs": ["https://www.linkedin.com/in/samwell-bio/"],
+    "address": {"@type": "PostalAddress", "addressLocality": "Nantes", "addressCountry": "FR"},
+    "knowsAbout": ["Angular", "TypeScript", "NgRx", "Signals", "Nx", "NestJS", "TDD", "Clean Architecture", "DDD"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Samuel Bio — Développeur Angular freelance",
+    "description": "Développeur Angular freelance senior et Lead Tech Front-end. Mission, audit, renfort : architecture, migration, tests.",
+    "url": "https://www.samuelbio.fr",
+    "email": "mailto:biosamuel7@gmail.com",
+    "areaServed": "France",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services Angular",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lancer un projet Angular sur des fondations solides"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reprendre ou moderniser une application existante"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Réduire les régressions et sécuriser les mises en production"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Faire monter une équipe en compétences"}}
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Êtes-vous disponible en remote ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Je travaille en remote partout en France. Je peux aussi venir sur site à Nantes, à Paris et aux alentours. Pour une autre ville, on en parle selon le rythme souhaité."}},
+      {"@type": "Question", "name": "Intervenez-vous sur une application Angular existante ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Je commence par comprendre le code, l'équipe et les contraintes. Ensuite, je propose un plan d'amélioration par étapes, plutôt qu'une réécriture complète."}},
+      {"@type": "Question", "name": "Faites-vous des audits ou migrations de version ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L'audit dresse un état des lieux : architecture, dette technique, tests, performance. Il se termine par une liste d'actions priorisées. La migration Angular se fait version par version, avec des tests pour limiter les risques. La durée dépend de la taille du code : on l'estime ensemble."}},
+      {"@type": "Question", "name": "Quelle est la durée minimale d'une mission ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend du besoin. Un audit est une mission courte. Un rôle de Lead Tech s'inscrit plutôt sur plusieurs mois. On fixe le format ensemble lors du premier échange."}},
+      {"@type": "Question", "name": "Pouvez-vous encadrer une équipe ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. En tant que Lead Tech front-end, j'accompagne les développeurs : revues de code, conventions, documentation et mentorat. L'objectif est une équipe autonome à la fin de la mission."}},
+      {"@type": "Question", "name": "Comment se passe le premier échange ?", "acceptedAnswer": {"@type": "Answer", "text": "20 minutes en visio, sans engagement. Vous présentez votre contexte et votre besoin. Je pose des questions et je vous dis franchement si je peux vous aider. Si c'est le cas, on convient de la suite."}}
+    ]
+  }
+];
+---
+<BaseLayout
+  title="Samuel Bio · Développeur Angular freelance senior et Lead Tech Front-end"
+  description="Développeur Angular freelance senior et Lead Tech à Nantes. Mission, audit, renfort : architecture, migration, tests. Certifié Expert Angular. Réservez 20 min."
+  canonical="https://www.samuelbio.fr/"
+  jsonLd={jsonLd}
+>
+  <Header currentPage="index" />
+  <main id="contenu" tabindex="-1">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Freelance · Nantes / Paris · Remote partout en France</p>
+          <h1 id="hero-title" class="hero__title">
+            Développeur <span class="hl">Angular</span> freelance senior et Lead Tech Front-end
+          </h1>
+          <p class="hero__subtitle">Applications Angular stables, rapides à faire évoluer et simples à maintenir, y compris sur une base de code en retard.</p>
+          <div class="hero__actions">
+            <a href="https://calendar.app.google/xJj7bte6fhgnTmTFA" class="btn btn--primary btn--lg" data-rdv="hero" target="_blank" rel="noopener">
+              <span>Réserver un échange de 20&nbsp;min</span>
+              <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+              <span class="visually-hidden"> (nouvel onglet)</span>
+            </a>
+            <a href="#parcours" class="btn btn--ghost btn--lg">Voir mes références</a>
+          </div>
+          <p class="hero__micro">En visio · 20 min · sans engagement</p>
+        </div>
+        <div class="hero__visual">
+          <svg class="star hero__star-1" width="44" height="44" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <path d={starPath} fill="var(--color-yellow)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+          </svg>
+          <div class="hero__portrait">
+          </div>
+          <p class="hero__tag" aria-hidden="true">&#123; Angular &#125;</p>
+          <p class="badge hero__badge">
+            <span class="badge__icon">
+              <svg class="star" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                <path d={starPath} fill="var(--color-green)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            Certifié Expert Angular (Level 3)
+          </p>
+          <svg class="star hero__star-2" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <path d={starPath} fill="var(--color-blue)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section aria-labelledby="stats-title">
+      <div class="container">
+        <h2 id="stats-title" class="visually-hidden">Chiffres-clés</h2>
+        <ul class="stats">
+          <li class="stat">
+            <span class="stat__value">8+ ans</span>
+            <span class="stat__label">d'expérience Angular</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value">Expert Angular</span>
+            <span class="stat__label">certifié (Level 3)</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value">2 milliards</span>
+            <span class="stat__label">de transactions par an sur une plateforme fintech</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section class="clients" aria-labelledby="clients-title">
+      <div class="container clients__inner">
+        <h2 id="clients-title" class="clients__title">Ils m'ont fait confiance</h2>
+        <ul class="clients__list">
+          <li class="clients__item">EDF</li>
+          <li class="clients__item">GRDF</li>
+          <li class="clients__item">V1</li>
+          <li class="clients__item">RCA</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise" class="section" aria-labelledby="expertise-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__kicker">
+            <svg class="star" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <path d={starPath} fill="var(--color-green)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+            </svg>
+            Expertise
+          </p>
+          <h2 id="expertise-title">Quand faire appel à moi</h2>
+          <p class="section__lead">Un développeur Angular senior pour démarrer, reprendre, fiabiliser ou faire grandir votre application. En mission freelance, sur site à Nantes ou en remote.</p>
+        </div>
+        <ul class="cards cards--2">
+          <li class="card">
+            <span class="card__icon card__icon--green" aria-hidden="true">01</span>
+            <h3>Lancer un projet Angular sur des fondations solides</h3>
+            <p class="card__text">Vous démarrez une application. Je pose l'architecture, les conventions et les tests dès le premier sprint. La dette ne s'installe pas.</p>
+            <ul class="chips" aria-label="Mots-clés">
+              <li class="chip">Architecture</li><li class="chip">Nx</li><li class="chip">Conventions</li>
+            </ul>
+          </li>
+          <li class="card">
+            <span class="card__icon card__icon--blue" aria-hidden="true">02</span>
+            <h3>Reprendre ou moderniser une application existante</h3>
+            <p class="card__text">Votre application a plusieurs versions de retard ? Je mène la migration Angular par étapes, pour continuer à livrer pendant les travaux.</p>
+            <ul class="chips" aria-label="Mots-clés">
+              <li class="chip">Migration de version</li><li class="chip">Standalone</li><li class="chip">Signals</li>
+            </ul>
+          </li>
+          <li class="card">
+            <span class="card__icon card__icon--yellow" aria-hidden="true">03</span>
+            <h3>Réduire les régressions et sécuriser les mises en production</h3>
+            <p class="card__text">Chaque mise en production vous inquiète ? Je mets en place des tests automatisés et une CI qui détectent les régressions avant vos utilisateurs.</p>
+            <ul class="chips" aria-label="Mots-clés">
+              <li class="chip">Tests</li><li class="chip">CI/CD</li><li class="chip">Qualité</li>
+            </ul>
+          </li>
+          <li class="card">
+            <span class="card__icon card__icon--green" aria-hidden="true">04</span>
+            <h3>Faire monter une équipe en compétences</h3>
+            <p class="card__text">Je travaille avec vos développeurs, pas à leur place : revues de code, mentorat, bonnes pratiques Angular au quotidien.</p>
+            <ul class="chips" aria-label="Mots-clés">
+              <li class="chip">Mentorat</li><li class="chip">Revues de code</li><li class="chip">Lead Tech</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BÉNÉFICES -->
+    <section class="section section--alt" aria-labelledby="benefices-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__kicker">
+            <svg class="star" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <path d={starPath} fill="var(--color-blue)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+            </svg>
+            Bénéfices
+          </p>
+          <h2 id="benefices-title">Ce que vous y gagnez</h2>
+          <p class="section__lead">Un Lead Tech front-end ne se mesure pas aux lignes de code écrites. Il se mesure à ce que l'équipe peut livrer après son passage.</p>
+        </div>
+        <ol class="cards cards--3" role="list">
+          <li class="benefit">
+            <span class="benefit__num" aria-hidden="true">01</span>
+            <h3>Une architecture claire et modulaire</h3>
+            <p>Le code est découpé par domaine métier. Chacun sait où ajouter une fonctionnalité sans casser le reste. L'application grandit sans devenir ingérable.</p>
+            <ul class="chips" aria-label="Méthodes et outils">
+              <li class="chip">Clean Architecture</li><li class="chip">DDD</li><li class="chip">Architecture hexagonale</li><li class="chip">Nx</li>
+            </ul>
+          </li>
+          <li class="benefit">
+            <span class="benefit__num" aria-hidden="true">02</span>
+            <h3>Moins de bugs grâce aux tests automatisés</h3>
+            <p>Chaque changement est vérifié automatiquement. Vous livrez plus souvent, avec moins de surprises en production.</p>
+            <ul class="chips" aria-label="Méthodes et outils">
+              <li class="chip">TDD</li><li class="chip">Vitest</li><li class="chip">Jest</li><li class="chip">Playwright</li><li class="chip">Cypress</li>
+            </ul>
+          </li>
+          <li class="benefit">
+            <span class="benefit__num" aria-hidden="true">03</span>
+            <h3>Une équipe autonome</h3>
+            <p>Documentation, Design System, revues de code et mentorat. Le savoir reste dans l'équipe après la mission.</p>
+            <ul class="chips" aria-label="Méthodes et outils">
+              <li class="chip">Documentation</li><li class="chip">Design System</li><li class="chip">Revues de code</li><li class="chip">Mentorat</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SECTEURS & PARCOURS -->
+    <section id="secteurs" class="section" aria-labelledby="references-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__kicker">
+            <svg class="star" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <path d={starPath} fill="var(--color-yellow)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+            </svg>
+            Secteurs
+          </p>
+          <h2 id="references-title">Références et secteurs</h2>
+          <p class="section__lead">Plus de 8 ans sur des applications métiers critiques, là où une régression coûte cher.</p>
+        </div>
+        <ul class="sectors" aria-label="Secteurs d'activité">
+          <li class="sector">Énergie</li>
+          <li class="sector">Fintech</li>
+          <li class="sector">Télécom</li>
+          <li class="sector">Environnement</li>
+          <li class="sector">Expertise comptable</li>
+        </ul>
+        <div id="parcours" aria-label="Parcours : missions récentes" role="region">
+          <ul class="cards cards--2">
+            <li class="card mission">
+              <div class="mission__head">
+                <div>
+                  <h3 class="mission__client">EDF</h3>
+                  <p class="mission__project">Projet Vision 2035</p>
+                </div>
+                <span class="mission__sector">Énergie</span>
+              </div>
+              <dl class="mission__facts">
+                <div>
+                  <dt>Contexte</dt>
+                  <dd>Projet Vision 2035 d'EDF, dans le secteur de l'énergie.</dd>
+                </div>
+                <div>
+                  <dt>Mon rôle</dt>
+                  <dd>Architecture DDD en monorepo Nx.</dd>
+                </div>
+              </dl>
+              <ul class="chips" aria-label="Mots-clés">
+                <li class="chip">DDD</li><li class="chip">Nx</li><li class="chip">Monorepo</li>
+              </ul>
+            </li>
+            <li class="card mission">
+              <div class="mission__head">
+                <div>
+                  <h3 class="mission__client">GRDF</h3>
+                  <p class="mission__project">Programme OMEGA</p>
+                </div>
+                <span class="mission__sector">Énergie</span>
+              </div>
+              <dl class="mission__facts">
+                <div>
+                  <dt>Contexte</dt>
+                  <dd>Programme OMEGA : un système d'information qui gère environ 11 millions de compteurs.</dd>
+                </div>
+                <div>
+                  <dt>Mon rôle</dt>
+                  <dd>Migration de modules critiques du SI.</dd>
+                </div>
+              </dl>
+              <ul class="chips" aria-label="Mots-clés">
+                <li class="chip">Migration Angular</li><li class="chip">SI critique</li>
+              </ul>
+            </li>
+            <li class="card mission">
+              <div class="mission__head">
+                <div><h3 class="mission__client">V1</h3></div>
+                <span class="mission__sector">Fintech</span>
+              </div>
+              <dl class="mission__facts">
+                <div>
+                  <dt>Contexte</dt>
+                  <dd>Plateforme fintech.</dd>
+                </div>
+              </dl>
+              <ul class="chips" aria-label="Mots-clés">
+                <li class="chip">Fintech</li>
+              </ul>
+            </li>
+            <li class="card mission">
+              <div class="mission__head">
+                <div><h3 class="mission__client">RCA</h3></div>
+                <span class="mission__sector">Expertise comptable</span>
+              </div>
+              <dl class="mission__facts">
+                <div>
+                  <dt>Contexte</dt>
+                  <dd>Logiciels pour l'expertise comptable.</dd>
+                </div>
+              </dl>
+              <ul class="chips" aria-label="Mots-clés">
+                <li class="chip">Expertise comptable</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section section--alt" aria-labelledby="stack-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__kicker">
+            <svg class="star" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <path d={starPath} fill="var(--color-green)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+            </svg>
+            Stack
+          </p>
+          <h2 id="stack-title">Stack technique</h2>
+          <p class="section__lead">Angular au centre, avec ce qu'il faut autour pour livrer : <span class="tech">NgRx</span>, <span class="tech">Signals</span>, <span class="tech">Nx</span>, une API et des tests.</p>
+        </div>
+        <div class="stack">
+          <div class="stack__col">
+            <h3><span class="tech" aria-hidden="true">&#123; &#125;</span> Front-end</h3>
+            <ul class="chips">
+              <li class="chip">Angular</li><li class="chip">TypeScript</li><li class="chip">RxJS</li><li class="chip">NgRx</li><li class="chip">Signals</li><li class="chip">Nx</li><li class="chip">Angular Material</li><li class="chip">Tailwind</li><li class="chip">Design System</li>
+            </ul>
+          </div>
+          <div class="stack__col">
+            <h3><span class="tech" aria-hidden="true">&#123; &#125;</span> Back-end</h3>
+            <ul class="chips">
+              <li class="chip">NestJS</li><li class="chip">Node.js</li><li class="chip">API REST</li><li class="chip">Docker</li><li class="chip">CI/CD</li>
+            </ul>
+          </div>
+          <div class="stack__col">
+            <h3><span class="tech" aria-hidden="true">&#123; &#125;</span> Qualité</h3>
+            <ul class="chips">
+              <li class="chip">SOLID</li><li class="chip">Clean Code</li><li class="chip">TDD</li><li class="chip">Tests unitaires</li><li class="chip">Tests E2E</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__kicker">
+            <svg class="star" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <path d={starPath} fill="var(--color-blue)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+            </svg>
+            FAQ
+          </p>
+          <h2 id="faq-title">Questions fréquentes</h2>
+        </div>
+        <div class="faq">
+          <details class="faq__item" open>
+            <summary>
+              <h3>Êtes-vous disponible en remote ?</h3>
+              <span class="faq__toggle" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="faq__answer">Oui. Je travaille en remote partout en France. Je peux aussi venir sur site à Nantes, à Paris et aux alentours. Pour une autre ville, on en parle selon le rythme souhaité.</p>
+          </details>
+          <details class="faq__item">
+            <summary>
+              <h3>Intervenez-vous sur une application Angular existante ?</h3>
+              <span class="faq__toggle" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="faq__answer">Oui. Je commence par comprendre le code, l'équipe et les contraintes. Ensuite, je propose un plan d'amélioration par étapes, plutôt qu'une réécriture complète.</p>
+          </details>
+          <details class="faq__item">
+            <summary>
+              <h3>Faites-vous des audits ou migrations de version ?</h3>
+              <span class="faq__toggle" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="faq__answer">Oui. L'audit dresse un état des lieux : architecture, dette technique, tests, performance. Il se termine par une liste d'actions priorisées. La migration Angular se fait version par version, avec des tests pour limiter les risques. La durée dépend de la taille du code : on l'estime ensemble.</p>
+          </details>
+          <details class="faq__item">
+            <summary>
+              <h3>Quelle est la durée minimale d'une mission ?</h3>
+              <span class="faq__toggle" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="faq__answer">Cela dépend du besoin. Un audit est une mission courte. Un rôle de Lead Tech s'inscrit plutôt sur plusieurs mois. On fixe le format ensemble lors du premier échange.</p>
+          </details>
+          <details class="faq__item">
+            <summary>
+              <h3>Pouvez-vous encadrer une équipe ?</h3>
+              <span class="faq__toggle" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="faq__answer">Oui. En tant que Lead Tech front-end, j'accompagne les développeurs : revues de code, conventions, documentation et mentorat. L'objectif est une équipe autonome à la fin de la mission.</p>
+          </details>
+          <details class="faq__item">
+            <summary>
+              <h3>Comment se passe le premier échange ?</h3>
+              <span class="faq__toggle" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14"></path>
+                </svg>
+              </span>
+            </summary>
+            <p class="faq__answer">20 minutes en visio, sans engagement. Vous présentez votre contexte et votre besoin. Je pose des questions et je vous dis franchement si je peux vous aider. Si c'est le cas, on convient de la suite.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section section--flush-top" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="final-cta">
+          <svg class="star final-cta__star-1" width="34" height="34" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <path d={starPath} fill="var(--color-green)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+          </svg>
+          <svg class="star final-cta__star-2" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <path d={starPath} fill="var(--color-yellow)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+          </svg>
+          <h2 id="cta-title">Un besoin Angular ? Parlons de votre projet.</h2>
+          <p>20 minutes pour cadrer votre besoin : mission, audit ou renfort Lead Tech.</p>
+          <a href="https://calendar.app.google/xJj7bte6fhgnTmTFA" class="btn btn--primary btn--lg" data-rdv="cta-final" target="_blank" rel="noopener">
+            <span>Réserver un échange de 20&nbsp;min</span>
+            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+            <span class="visually-hidden"> (nouvel onglet)</span>
+          </a>
+          <p class="final-cta__micro">En visio · 20 min · sans engagement</p>
+          <ul class="final-cta__contacts">
+            <li>
+              <a href="mailto:biosamuel7@gmail.com">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m4 7 8 6 8-6"></path>
+                </svg>
+                biosamuel7@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/samwell-bio/" target="_blank" rel="me noopener" aria-label="LinkedIn : Samuel Bio (nouvel onglet)">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8 10.5V17M8 7.5v.01M12 17v-6.5M12 13.5c0-1.7 1-3 2.6-3S17 11.6 17 13.3V17"></path>
+                </svg>
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</BaseLayout>

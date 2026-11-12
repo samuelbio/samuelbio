@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const starPath = "M16 1.5c.9 7.6 6.9 13.6 14.5 14.5-7.6.9-13.6 6.9-14.5 14.5C15.1 22.9 9.1 16.9 1.5 16 9.1 15.1 15.1 9.1 16 1.5Z";
+---
+<BaseLayout
+  title="Réserver un échange de 20 min | Samuel Bio, Angular"
+  description="Prenez rendez-vous avec Samuel Bio, développeur Angular freelance certifié Expert Angular. 20 min en visio, sans engagement."
+  canonical="https://www.samuelbio.fr/rdv"
+  ogImage="https://www.samuelbio.fr/og/rdv.jpg"
+  ogImageAlt="Un besoin Angular ? Parlons-en. Réservez un échange de 20 minutes en visio avec Samuel Bio."
+>
+  <Header currentPage="other" />
+  <main id="contenu" tabindex="-1">
+    <section class="rdv" aria-labelledby="rdv-title">
+      <div class="container rdv__grid">
+        <div class="rdv__content">
+          <a class="rdv__back" href="./">← Samuel Bio, développeur Angular freelance</a>
+          <h1 id="rdv-title">Parlons de votre projet Angular</h1>
+          <p class="hero__subtitle">20 minutes pour cadrer votre besoin : mission, audit ou renfort Lead Tech.</p>
+          <p class="hero__micro">En visio · 20 min · sans engagement</p>
+          <a href="https://calendar.app.google/xJj7bte6fhgnTmTFA" class="btn btn--primary btn--lg" data-rdv="rdv-hero" target="_blank" rel="noopener">
+            <span>Réserver un échange de 20&nbsp;min</span>
+            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+            <span class="visually-hidden"> (nouvel onglet)</span>
+          </a>
+        </div>
+        <article class="slot" aria-labelledby="slot-title">
+          <svg class="star hero__star-1" width="40" height="40" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <path d={starPath} fill="var(--color-yellow)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+          </svg>
+          <div class="slot__head">
+            <span class="slot__avatar" aria-hidden="true">SB</span>
+            <div>
+              <h2 id="slot-title" class="slot__title">Échange de 20 min</h2>
+              <p class="slot__by">avec Samuel Bio · Certifié Expert Angular (Level 3)</p>
+            </div>
+          </div>
+          <ul class="slot__facts">
+            <li class="slot__fact">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                <rect x="3" y="6" width="13" height="12" rx="3"></rect><path d="m16 10.5 5-3v9l-5-3"></path>
+              </svg>
+              En visio
+            </li>
+            <li class="slot__fact">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path>
+              </svg>
+              20 min
+            </li>
+            <li class="slot__fact">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+                <path d="m5 12.5 4.5 4.5L19 7.5"></path>
+              </svg>
+              Sans engagement
+            </li>
+          </ul>
+          <ul class="slot__agenda" aria-label="Déroulé de l'échange">
+            <li><span class="mono">01</span><span>Vous présentez votre contexte et votre application Angular.</span></li>
+            <li><span class="mono">02</span><span>On précise le besoin : mission, audit, migration ou renfort Lead Tech.</span></li>
+            <li><span class="mono">03</span><span>Je vous dis franchement si je peux vous aider, et on convient de la suite.</span></li>
+          </ul>
+          <a href="https://calendar.app.google/xJj7bte6fhgnTmTFA" class="btn btn--primary" data-rdv="rdv-carte" target="_blank" rel="noopener">
+            <span>Réserver un échange de 20&nbsp;min</span>
+            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+            <span class="visually-hidden"> (nouvel onglet)</span>
+          </a>
+          <p class="slot__by">Vous choisissez le créneau qui vous convient sur l'agenda.</p>
+          <svg class="star hero__star-2" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <path d={starPath} fill="var(--color-blue)" stroke="var(--color-ink)" stroke-width="1.6" stroke-linejoin="round"></path>
+          </svg>
+        </article>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
